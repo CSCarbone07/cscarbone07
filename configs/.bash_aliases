@@ -1,0 +1,1 @@
+alias ca='conda deactivate'  
