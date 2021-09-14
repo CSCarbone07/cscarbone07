@@ -1,4 +1,4 @@
-alias ca='conda deactivate'  
+alias ca='conda activate'  
 alias xo='xdg-open'
 
 
