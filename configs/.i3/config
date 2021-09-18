@@ -179,7 +179,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+  #      status_command i3status
+  # status_command i3status # this is the usual default configuration
+  #status_command i3status | i3-keyboard-layout i3status
+  status_command i3status | ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh i3status
 }
 
 
@@ -202,9 +205,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Keyboard layous
-exec_always "setxkbmap -layout us,de"
-#exec_always "setxkbmap -option 'grp:alt_shift_toggle'"
+exec_always "setxkbmap -layout us"
+#exec_always "setxkbmap -layout us,es,it,de,jp,cz,ru,ar,pt"
+#exec_always "setxkbmap -option 'grp:super_space_toggle'"
 
 #Mod1+space "setxkbmap -option 'grp:alt_shift_toggle'"
+#bindsym $mod+space ~/git/cscarbone07/configs/scripts/change_keyboard_layout.sh
 
 
+bindsym $mod+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh cycle us es it de jp cz ru ar pt
+#bindsym $mod+shift+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh reverse_cycle us es it de jp cz ru ar pt
