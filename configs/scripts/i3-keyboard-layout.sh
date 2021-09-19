@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Original file downloaded from https://github.com/porras/i3-keyboard-layout
+
 set -e
 
 get_kbdlayout() {
