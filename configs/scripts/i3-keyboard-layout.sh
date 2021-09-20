@@ -36,6 +36,23 @@ reverse_cycle() {
   set_kbdlayout "$next_layout"
 }
 
+switch_main_test() {
+  echo "testiiing"
+}
+
+toggle_main() {
+  #echo "switching layout to main"
+  main_layout=us
+  #set_kbdlayout "$main_layout"
+  current_layout=$(get_kbdlayout | xargs)
+  if [ "$current_layout" != "$main_layout" ]
+  then
+      set_kbdlayout "$main_layout"
+  fi
+  #echo $main_layout
+}
+
+
 i3status() {
   while :
   do
@@ -58,8 +75,12 @@ case $subcommand in
   "cycle")
     cycle "$@"
     ;;
+  "toggle_main")
+    toggle_main "$@"
+    ;;
   "i3status")
     i3status
     ;;
 esac
+
 

@@ -215,3 +215,9 @@ exec_always "setxkbmap -layout us"
 
 bindsym $mod+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh cycle us es it de jp cz ru ar pt
 #bindsym $mod+shift+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh reverse_cycle us es it de jp cz ru ar pt
+
+bindsym ctrl+$mod+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh toggle_main us es it de jp cz ru ar pt
+
+
+
+
