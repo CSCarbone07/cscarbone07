@@ -204,6 +204,21 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# move to workspace to left or right
+bindsym $mod+ctrl+Shift+j workspace prev
+bindsym $mod+ctrl+Shift+semicolon workspace next
+
+
+# move workspace to different screen
+bindsym $mod+ctrl+j move workspace to output right
+bindsym $mod+ctrl+semicolon move workspace to output left
+# alternatively, use arrow keys
+bindsym $mod+ctrl+Right move workspace to output right
+bindsym $mod+ctrl+Left  move workspace to output left
+
+
+
+
 # Keyboard layous
 exec_always "setxkbmap -layout us"
 #exec_always "setxkbmap -layout us,es,it,de,jp,cz,ru,ar,pt"
