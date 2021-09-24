@@ -36,3 +36,34 @@ augroup END
 set rtp+=~/.fzf
 
 nmap <A-f> :FZF<ENTER>
+
+" Plugins will be downloaded under the specified directory.
+call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+
+" Declare the list of plugins.
+"Plug 'tpope/vim-sensible'
+"Plug 'junegunn/seoul256.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Ultisnips plugin
+" Track the engine.
+Plug 'SirVer/ultisnips'
+
+" Snippets are separated from the engine. Add this if you want them:
+Plug 'honza/vim-snippets'
+
+" Trigger configuration. You need to change this to something other than <tab> if you use one of the following:
+" - https://github.com/Valloric/YouCompleteMe
+" - https://github.com/nvim-lua/completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+
+
+
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
