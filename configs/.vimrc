@@ -37,12 +37,19 @@ set rtp+=~/.fzf
 
 nmap <A-f> :FZF<ENTER>
 
+
+" To add plugins with vim plug, follow instructions from
+" https://github.com/junegunn/vim-plug
+" https://github.com/junegunn/vim-plug/wiki/tutorial
+
 " Plugins will be downloaded under the specified directory.
-call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
+call plug#begin()
+"call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 " Declare the list of plugins.
 "Plug 'tpope/vim-sensible'
 "Plug 'junegunn/seoul256.vim'
+Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Ultisnips plugin
