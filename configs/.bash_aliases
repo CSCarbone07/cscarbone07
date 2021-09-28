@@ -1,4 +1,8 @@
+alias cdc='cd ~/git/cscarbone07/'  
+
+
 alias ca='conda activate'  
+alias cda='conda deactivate'  
 alias xo='xdg-open'
 alias sr='source devel/setup.bash'
 alias lsa='ls --all'
