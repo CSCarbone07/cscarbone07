@@ -1,5 +1,6 @@
 alias cdc='cd ~/git/cscarbone07/'  
 
+alias ra='. ranger'  
 
 alias ca='conda activate'  
 alias cda='conda deactivate'  

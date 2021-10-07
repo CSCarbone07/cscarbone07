@@ -7,6 +7,11 @@ set showmatch	" Highlight matching brace
 "set visualbell	" Use visual bell (no beeping)
 set clipboard=unnamedplus
 
+"use this to not consider deleted characters in clipboard
+noremap <Leader>p "0p
+noremap <Leader>P "0P
+vnoremap <Leader>p "0p
+
 set hlsearch	" Highlight all search results
 set smartcase	" Enable smart-case search
 set ignorecase	" Always case-insensitive
