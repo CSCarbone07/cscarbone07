@@ -7,21 +7,45 @@ import yaml
 
 myDir = os.path.dirname(os.path.abspath(__file__))
 tmpDir = '/../../tmp/'
+config_file_name = 'keyboard_config.yaml'
 
 def cycle():
     print("cycling")
     parsed = openConfig()
-    cbl = parsed['current_keyboard_layout']    
-    #os.system('echo "printing command test"')
+    layouts = parsed['layouts']
+    primary_layout = parsed['primary']
+    parsed['primary'] = primary_layout
+    for l in range(len(layouts)):
+        #print (layouts[l])
+        if layouts[l] == primary_layout:
+            print('found match ' + layouts[l])
+            if l == len(layouts) - 1:
+                primary_layout = layouts[0]
+            else:
+                primary_layout = layouts[l+1]
+            break
+
+    parsed['primary'] = primary_layout
+
+    saveConfig(parsed)
+
+    cmd = 'setxkbmap -layout ' + primary_layout
+   
+    print(cmd)
+    os.system(cmd)
     
 def setLayout(inLayout):
     os.system('setxkbmap ' + inLayout)
     
 
+def saveConfig(outParsed):
+    tmpConfig_dir = myDir + tmpDir 
+    config_file_tmp = tmpConfig_dir + config_file_name
+    with open(config_file_tmp, 'w') as f:
+        yaml.dump(outParsed, f)
+
 def openConfig():
     tmpConfig_dir = myDir + tmpDir 
-
-    config_file_name = 'keyboard_config.yaml'
 
     config_file = myDir + '/' + config_file_name 
     config_file_tmp = tmpConfig_dir + config_file_name
