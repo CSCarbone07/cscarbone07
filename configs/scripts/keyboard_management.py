@@ -9,8 +9,13 @@ myDir = os.path.dirname(os.path.abspath(__file__))
 tmpDir = '/../../tmp/'
 config_file_name = 'keyboard_config.yaml'
 
-def cycle():
-    print("cycling")
+def cycle(inDirection):
+    
+    if inDirection:
+        print("cycling forward")
+    else:
+        print("cycling backwards")
+
     parsed = openConfig()
     layouts = parsed['layouts']
     primary_layout = parsed['primary']
@@ -18,12 +23,20 @@ def cycle():
     for l in range(len(layouts)):
         #print (layouts[l])
         if layouts[l] == primary_layout:
-            print('found match ' + layouts[l])
-            if l == len(layouts) - 1:
-                primary_layout = layouts[0]
+            print('found match ' + layouts[l] + ' at id ' + str(l))
+            if inDirection:
+                if l == len(layouts) - 1:
+                    primary_layout = layouts[0]
+                else:
+                    primary_layout = layouts[l+1]
+                break
             else:
-                primary_layout = layouts[l+1]
-            break
+                if l == 0:
+                    primary_layout = layouts[len(layouts)-1]
+                else:
+                    primary_layout = layouts[l-1]
+                break
+                
 
     parsed['primary'] = primary_layout
 
