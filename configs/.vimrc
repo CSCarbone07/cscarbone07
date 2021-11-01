@@ -36,6 +36,24 @@ augroup highlightcursorline
     autocmd WinLeave * set nocursorline nocursorcolumn
 augroup END
 
+" remap split navigations to ctrl + hjkl
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+
+
+
+
+
+
+
+
+
+
+
+" --------------------------------- PLUGIN AREA-------------------------------
 
 " adding fzf plugin
 set rtp+=~/.fzf
@@ -56,6 +74,12 @@ call plug#begin()
 "Plug 'junegunn/seoul256.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" Managing navigation between vim and tmux
+" allows to use the same keys (CTRL+hjkl) for smothly navigating between tmux
+" and vim panels... its like magic :-)
+Plug 'christoomey/vim-tmux-navigator'
+
 
 " Ultisnips plugin
 " Track the engine.
