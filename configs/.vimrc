@@ -44,8 +44,15 @@ nnoremap <C-H> <C-W><C-H>
 
 
 
+" remap tab navigations to shift + HL
+" EPIGEN_DEL_BLOCK_VIKTOR_BIGBOX EPIGEN_DEL_BLOCK_VIKTOR_THINKPAD {
+nnoremap <S-L> :tabn<cr>
+" EPIGEN_DEL_BLOCK_VIKTOR_BIGBOX EPIGEN_DEL_BLOCK_VIKTOR_THINKPAD }
+nnoremap <S-H> :tabp<cr>
 
-
+" remap buffer navigations to shift + JK
+nnoremap <S-K> :bnext<cr>
+nnoremap <S-J> :bprevious<cr>
 
 
 
@@ -80,6 +87,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " and vim panels... its like magic :-)
 Plug 'christoomey/vim-tmux-navigator'
 
+" To visualize better buffer and other status
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline'
+" enable airline YCM status
+let g:airline#extensions#ycm#enabled = 1
+" display open buffers when one window is active
+let g:airline#extensions#tabline#enabled = 1
 
 " Ultisnips plugin
 " Track the engine.
