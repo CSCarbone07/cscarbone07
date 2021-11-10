@@ -1,5 +1,6 @@
 # Keyboad layout settings
 layouts: ["us", "es", "it", "de", "jp", "cz", "ru", "ar", "pt"]
+current: "secondary" #primary or secondary
 primary: "us"
 secondary: "es"
 

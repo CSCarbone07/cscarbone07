@@ -21,13 +21,7 @@ def cycle(inDirection):
     layouts = parsed['layouts']
     primary_layout = parsed['primary']
     secondary_layout = parsed['secondary']
-    
-    # Currently only cycling secondary keyboard since there is no clear way to have feedback
-    # on which is the current layout (to go to the us or primary layout use
-    # togglePrimarySecondary function)
-    #current_layout = parsed['current']
-    current_layout = "secondary"
-    
+    current_layout = parsed['current']
     if(current_layout == "primary"):
         old_layout = primary_layout 
         new_layout = primary_layout 
@@ -55,12 +49,10 @@ def cycle(inDirection):
 
     if(current_layout == "primary"):
         parsed['primary'] = new_layout
-        parsed['current'] = "primary"
+        cmd = 'setxkbmap -layout ' + primary_layout 
     if(current_layout == "secondary"):
         parsed['secondary'] = new_layout
-        parsed['current'] = "secondary"
-    
-    cmd = 'setxkbmap -layout ' + new_layout 
+        cmd = 'setxkbmap -layout ' + secondary_layout 
 
     saveConfig(parsed)
     print(cmd)
@@ -75,11 +67,9 @@ def togglePrimarySecondary():
     current_layout = parsed['current']
     
     if(current_layout == "primary"):
-        cmd = 'setxkbmap -layout ' + secondary_layout
-        parsed['current'] = "secondary"
-    if(current_layout == "secondary"):
         cmd = 'setxkbmap -layout ' + primary_layout  
-        parsed['current'] = "primary"
+    if(current_layout == "secondary"):
+        cmd = 'setxkbmap -layout ' + secondary_layout  
     
     saveConfig(parsed)
     print(cmd)
@@ -139,14 +129,8 @@ if __name__ == "__main__":
     print("main function")
     try:
         function = sys.argv[1]
-        print(len(sys.argv))
-        #if len(sys.argv)>2:
-            #globals()[function](sys.argv[2])
-        if function == "cycle":
-            if sys.argv[2] == "True":
-                globals()[function](True)
-            else:
-                globals()[function](False)
+        if sys.argv.size()>1:
+            globals()[function](sys.argv[2])
         else:
             globals()[function]()
 

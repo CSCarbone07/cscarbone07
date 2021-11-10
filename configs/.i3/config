@@ -230,11 +230,14 @@ exec_always setxkbmap -layout us
 #bindsym $mod+space ~/git/cscarbone07/configs/scripts/change_keyboard_layout.sh
 
 
-bindsym $mod+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh cycle us es it de jp cz ru ar pt
+#bindsym $mod+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh cycle us es it de jp cz ru ar pt
 #bindsym $mod+shift+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh reverse_cycle us es it de jp cz ru ar pt
+#
+#bindsym ctrl+$mod+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh toggle_main us es it de jp cz ru ar pt
 
-bindsym ctrl+$mod+space exec ~/git/cscarbone07/configs/scripts/i3-keyboard-layout.sh toggle_main us es it de jp cz ru ar pt
-
+bindsym $mod+space exec python3 ~/git/cscarbone07/configs/scripts/keyboard_management.py cycle True
+bindsym shift+$mod+space exec python3 ~/git/cscarbone07/configs/scripts/keyboard_management.py cycle False
+bindsym ctrl+$mod+space exec python3 ~/git/cscarbone07/configs/scripts/keyboard_management.py togglePrimarySecondary
 
 
 
