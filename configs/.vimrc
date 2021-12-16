@@ -94,6 +94,10 @@ let g:airline#extensions#ycm#enabled = 1
 " display open buffers when one window is active
 let g:airline#extensions#tabline#enabled = 1
 
+" for surrounding text with parenthesis, brackets, quotes, etc
+Plug 'tpope/vim-surround'
+
+
 " Ultisnips plugin
 " Track the engine.
 Plug 'SirVer/ultisnips'

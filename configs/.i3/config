@@ -218,6 +218,13 @@ bindsym $mod+ctrl+semicolon move workspace to output left
 bindsym $mod+ctrl+Right move workspace to output right
 bindsym $mod+ctrl+Left  move workspace to output left
 
+# move workspace to different screen
+bindsym $mod+ctrl+l move workspace to output up 
+bindsym $mod+ctrl+k move workspace to output down 
+# alternatively, use arrow keys
+bindsym $mod+ctrl+Up move workspace to output up 
+bindsym $mod+ctrl+Down move workspace to output down 
+
 # Background
 exec_always xsetroot -solid "#004632"
 
