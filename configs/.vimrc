@@ -6,6 +6,7 @@ set textwidth=100	" Line wrap (number of cols)
 set showmatch	" Highlight matching brace
 "set visualbell	" Use visual bell (no beeping)
 set clipboard=unnamedplus
+set hidden      " This makes that changing buffers (tabs) with a modified file opened does not require saving to change buffer
 
 "use this to not consider deleted characters in clipboard
 noremap <Leader>p "0p
