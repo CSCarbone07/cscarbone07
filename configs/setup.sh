@@ -10,6 +10,9 @@ $HOME"/.tmux.conf"
 $HOME"/.vimrc" 
 $HOME"/.config/nvim/init.vim" 
 )
+
+mkdir $HOME"/.config/nvim" 
+
 #config_names[1]=.vimrc 
 declare -i it=0
 for var in ${config_paths[@]}
