@@ -62,10 +62,6 @@ nnoremap <S-J> :bprevious<cr>
 
 " --------------------------------- PLUGIN AREA-------------------------------
 
-" adding fzf plugin
-set rtp+=~/.fzf
-
-nmap <A-f> :FZF<ENTER>
 
 
 " To add plugins with vim plug, follow instructions from
@@ -76,11 +72,19 @@ nmap <A-f> :FZF<ENTER>
 call plug#begin()
 "call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
+
+" adding fzf plugin
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+set rtp+=~/.fzf
+
+nmap <A-f> :FZF<ENTER>
+
 " Declare the list of plugins.
 "Plug 'tpope/vim-sensible'
 "Plug 'junegunn/seoul256.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+let g:coc_disable_startup_warning = 1
 
 " Managing navigation between vim and tmux
 " allows to use the same keys (CTRL+hjkl) for smothly navigating between tmux
