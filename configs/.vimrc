@@ -84,7 +84,14 @@ nmap <A-f> :FZF<ENTER>
 "Plug 'junegunn/seoul256.vim'
 Plug 'morhetz/gruvbox'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-let g:coc_disable_startup_warning = 1
+"Use <cr> to confirm completion"
+inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : "\<CR>"
+"To make <cr> select the first completion item and confirm the completion when no item has been selected:"
+inoremap <silent><expr> <cr> coc#pum#visible() ? coc#_select_confirm() : "\<C-g>u\<CR>"
+"inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+"inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+"let g:coc_disable_startup_warning = 1"
 
 " Managing navigation between vim and tmux
 " allows to use the same keys (CTRL+hjkl) for smothly navigating between tmux
