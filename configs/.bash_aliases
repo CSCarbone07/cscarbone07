@@ -7,6 +7,7 @@ alias cda='conda deactivate'
 alias xo='xdg-open'
 alias sr='source devel/setup.bash'
 alias lsa='ls --all'
+alias count='ls -1 | wc -l'
 
 alias uav60='ssh mrs@192.168.69.160'
 alias uav61='ssh mrs@192.168.69.161'
